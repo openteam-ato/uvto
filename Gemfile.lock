@@ -182,4 +182,5 @@ DEPENDENCIES
   sass-rails
   therubyracer
   uglifier
+  unicorn
   uuid
