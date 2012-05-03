@@ -1,0 +1,477 @@
+body
+  background: #f7f7f7
+  font-family: Verdana, Arial, sans-serif
+
+  sup
+    vertical-align: super
+
+  sub
+    vertical-align: sub
+
+  a
+    color: #005fab
+    outline: none
+
+  a:hover
+    text-decoration: none !important
+
+  .rss
+    background: image_url('rss.png') no-repeat
+    display: block
+    float: right
+    height: 24px
+    text-indent: -9999px
+    width: 24px
+
+
+  .inner
+    +clearfix
+    margin: 0 auto
+    width: 976px
+
+.top
+  +clearfix
+  background: image_url('top_bg.png') repeat-x left
+  color: #fff
+  height: 32px
+
+  a
+    color: #fff
+
+  .languages
+    float: left
+    font-size: 12px
+    margin: 9px 0 0 62px
+
+    li
+      float: left
+      margin: 0 14px 0 0
+
+  .impaired
+    float: left
+    font-size: 16px
+    margin: 5px 0 0 159px
+
+    a
+      display: block
+      background: image_url('goggles.png') no-repeat left 0
+      padding:  3px 0 0 61px
+      height: 21px
+      width: 230px
+
+  .sitemap
+    display: block
+    float: right
+    font-size: 13px
+    margin: 8px 23px 0 0
+
+.header
+  +clearfix
+  background: image_url('header_bg.png') repeat-x left
+  height: 115px
+
+  .logo
+    float: left
+    height: 120px
+    margin: 5px 26px 0 38px
+    width: 120px
+
+    a
+      background: image_url('logo.png') no-repeat
+      display: block
+      height: 120px
+      text-indent: -99999px
+      position: absolute
+      width: 120px
+      z-index: 4
+
+  .site_title
+    float: left
+    font-size: 25px
+    margin: 19px 0 0 0
+
+    a
+      +clearfix
+      color: #000
+      display: block
+      text-decoration: none
+
+    .desc
+      display: block
+      color: #808080
+      font-size: 15px
+      margin: 7px 0 0 0
+      text-transform: lowercase
+
+  .search_block
+    font-size: 14px
+    float: left
+    margin: 9px 0 0 0
+    width: 500px
+
+    .inputs
+      float: left
+      margin: 0 5px 0 0
+
+      input
+        border: 1px solid #ccc
+        height: 21px
+        padding: 0 7px
+        width: 414px
+
+    .buttons
+      input
+        +background-image(linear-gradient(#f6f6f6, #e1e1e1))
+        +border-radius(2px)
+        border: 1px solid #c0c0c0
+        height: 23px
+        padding: 0
+        width: 63px
+
+  .additional
+    float: right
+    margin: 28px 9px 0 0
+
+    li
+      margin: 0 0 10px 0
+    a
+      background: #699769 image_url('additional_right.png') no-repeat right center
+      color: #fff
+      display: block
+      font-size: 14px
+      height: 30px
+      line-height: 30px
+      text-decoration: none
+      text-transform: uppercase
+      padding: 0 0 0 20px
+      width: 180px
+
+.main_menu
+  background: image_url('main_menu_bg.png') repeat-x left
+  height: 42px
+
+  .inner
+    overflow: visible
+
+  ul
+    +min-height(42px)
+    background: image_url('main_menu_delimiter.png') no-repeat left
+    margin: 0 0 0 18px
+
+    li
+      float: left
+
+      &.active
+        +clearfix
+        background: image_url('main_menu_active.png') no-repeat center bottom
+        height: 49px
+        position: relative
+
+        &:hover
+          +box-shadow(none)
+          background: image_url('main_menu_active.png') no-repeat center bottom
+          height: 49px
+
+          a
+            background: image_url('main_menu_delimiter.png') no-repeat right
+            position: static
+            z-index: 2
+
+      a
+        background: image_url('main_menu_delimiter.png') no-repeat right
+        color: #000
+        display: block
+        font-size: 14px
+        height: 42px
+        line-height: 42px
+        padding: 0 24px
+        text-decoration: none
+        text-transform: uppercase
+
+      &:hover
+        +single-box-shadow(#b3b3b3, 0, 0, 10px, 2px)
+        background: #f7f7f7
+
+        a
+          background: #f7f7f7
+          position: relative
+          z-index: 3
+
+        .submenu_floated
+          +single-box-shadow(#b3b3b3, 0, 0, 10px, 2px)
+          display: block
+          margin-left: -1px
+          margin-top: -5px
+
+      .submenu_floated
+        +clearfix
+        background: #558754
+        display: none
+        padding: 0 0 11px 0
+        position: absolute
+        z-index: 2
+        width: 372px
+
+        div
+          +clearfix
+          background: #f7f7f7
+          border: 1px solid #b3b3b3
+          border-top: none
+          padding: 24px 0 0 29px
+
+          ul
+            background: none
+            float: left
+            margin: 0 30px 0 0
+            padding: 0
+            width: 140px
+
+            li
+              width: 140px
+
+              &:hover
+                +single-box-shadow(none)
+                background: none
+                height: auto
+
+              a
+                background: none
+                color: #005fab
+                font-size: 13px
+                height: auto
+                line-height: 16px
+                margin: 0 0 20px 0
+                padding: 0
+                text-decoration: underline
+                text-transform: none
+
+.submenu_opened
+  background: #3e7541
+  border: 1px solid #005504
+  +background-image(linear-gradient(#3e7541, #558754, #3e7541))
+  display: block
+
+  .inner
+    margin-top: 18px
+    padding: 0 20px 18px
+    width: 936px
+
+  .active
+    font-weight: bold
+
+    a
+      text-decoration: none
+
+  li
+    border-right: 1px solid #83b782
+    float: left
+    padding: 0 7px 0 0
+    margin: 0 7px 7px 0
+
+    a
+      color: #fff
+      font-size: 14px
+
+    &.subnavigation_title
+      color: #d0d0d0
+      font-weight: bold
+      border-right: none
+      padding-right: 0
+
+    &:last-child
+      border-right: none
+      padding-right: 0
+      margin-right: 0
+
+.breadcrumbs
+  border-bottom: 1px solid #ccc
+
+  .inner
+    font-size: 12px
+    line-height: 20px
+    padding: 12px 18px
+    width: 940px
+
+.banners_block
+  +clearfix
+  height: 272px
+
+  .inner
+    border-top: 1px dotted #7f7f7f
+    padding: 14px 0 36px
+    width: 990px
+
+  .jcarousel-container
+    +clearfix
+    padding: 0 16px
+
+    .jcarousel-clip
+      +clearfix
+
+    .jcarousel-prev
+      background: image_url('banners-btn.png') no-repeat 0 0
+      height: 24px
+      left: -16px
+      position: relative
+      top: -135px !important
+      width: 12px
+
+      &:hover
+        background-position: 0 -28px
+
+      &:active
+        background-position: 0 -55px
+
+    .jcarousel-next
+      background: image_url('banners-btn.png') no-repeat -36px 0
+      height: 24px
+      position: relative
+      right: -961px
+      top: -159px !important
+      width: 12px
+
+      &:hover
+        background-position: -36px -28px
+
+      &:active
+        background-position: -36px -55px
+
+  ul
+    +clearfix
+    margin: 0 auto
+    padding: 15px 0 !important
+    text-align: center
+
+    li
+      +single-box-shadow(#dfdfdf, 0, 0, 15px, 3px)
+      +inline-block
+      +clearfix
+      border-top: 1px solid #dedede
+      border-left: 1px solid #d1d1d1
+      border-right: 1px solid  #c7c7c7
+      border-bottom: 1px solid #c7c7c7
+      margin: 0 10px
+
+      &:hover
+        +single-box-shadow(#d1d1d1 0 0 7px 3px)
+        a
+          +single-box-shadow(#dfdfdf, -10px, -10px, 40px, 10px, true)
+
+      a
+        +clearfix
+        +single-box-shadow(#dfdfdf, -5px, -11px, 30px, 2px, true)
+        color: #005fab
+        display: block
+        font-size: 10px
+        line-height: 20px
+        height: 208px
+        padding: 0 20px 10px
+        text-align: center
+        width: 178px
+
+        img
+          display: block
+          height: 100px
+          margin: 20px 39px 20px
+          width: 100px
+
+.bottom_navigation
+  +clearfix
+  background: #ebebeb
+  border-top: 1px dotted #7f7f7f
+
+  .inner
+    padding: 31px 28px
+    width: 920px
+
+    div
+      float: left
+      margin: 0 32px 0 0
+      width: 158px
+
+    .last
+      margin: 0
+
+    h3
+      border-bottom: 1px solid #808080
+      height: 75px
+
+      a
+        color: #000
+        font-size: 17px
+        line-height: 22px
+
+    ul
+      margin: 8px 0 0 0
+
+      li
+        margin: 0 0 12px 0
+
+        a
+          color: #4d4d4d
+          font-size: 12px
+          line-height: 18px
+
+.footer
+  +clearfix
+  background: image_url('footer_bg.png') repeat-x left
+  color: #fff
+  font-size: 13px
+  height: 152px
+
+  a
+    color: #fff
+
+  .contacts
+    +clearfix
+    float: left
+    margin: 20px 0 0 16px
+    width: 280px
+
+    h5
+      font-size: 15px
+      margin: 0 0 11px 0
+
+    p
+      margin: 0 0 7px 0
+
+  .social_links
+    float: left
+    margin: 21px 5px 0 513px
+
+    ul
+      +clearfix
+
+      li
+        float: left
+        margin: 0 7px 0 0
+
+        a
+          background: image_url('social_links.png') no-repeat
+          display: block
+          height: 25px
+          text-indent: -9999px
+          width: 24px
+
+        .rss
+          background-position: 0px 0px
+
+        .vkontakte
+          background-position: -32px 0px
+
+        .facebook
+          background-position: -64px 0px
+
+        .twitter
+          background-position: -94px 0px
+
+        .livejournal
+          background-position: -125px 0px
+
+  .copyrights
+    float: left
+    margin: 38px 15px 0 506px
+    text-align: right
+
+    li
+      margin: 0 0 8px 0

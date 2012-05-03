@@ -1,0 +1,28 @@
+<% if @right_side_navigation %>
+  <div class="right_side_navigation noindex">
+    <h4><%= @right_side_navigation.content.values.first['title'] %></h4>
+    <%= render_navigation(@right_side_navigation.content.values.first['children']) %>
+    <div class="right_side_bottom"></div>
+  </div>
+<% end %>
+
+<% if @right_side_links %>
+  <div class="right_side_links <%= 'subdivision_links' if @right_side_links.content.body.match(/subdivision_links/) %>">
+    <h4><%= @right_side_links.part_title %></h4>
+    <%= @right_side_links.content.body.html_safe %>
+  </div>
+<% end %>
+
+<% if @right_side_facts %>
+  <div class="right_side_facts">
+    <h4>Факты</h4>
+    <%= @right_side_facts.content.body.html_safe %>
+    <div class="right_side_bottom"></div>
+  </div>
+<% end %>
+
+<% if @right_side_charts %>
+  <div class="right_side_charts">
+    <%= @right_side_charts.content.body.html_safe %>
+  </div>
+<% end %>

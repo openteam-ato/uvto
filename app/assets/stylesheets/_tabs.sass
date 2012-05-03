@@ -1,0 +1,23 @@
+.tabs
+  +clearfix
+  border-top: 1px solid #ccc
+  border-bottom: 1px solid #ccc
+  text-align: center
+
+  li
+    +inline-block
+    padding: 10px !important
+
+    &.active
+      background: #eee
+      color: #555
+
+    &:hover
+      color: #555
+      cursor: pointer
+
+    &:before
+      content: ''
+      display: none
+      float: none
+      position: static

@@ -1,0 +1,69 @@
+<div class="actual_and_calendar">
+  <div class="inner">
+    <div class="actual">
+      <ul id='slider'>
+        <% @actual.content['items'].each do |item| %>
+          <%= image_tag item.images.first.thumbnail.url, :title => "<a href='#{item.link}'>#{item.title}</a>", :alt => item.images.first.thumbnail.description %>
+        <% end if @actual %>
+      </ul>
+    </div>
+
+    <div class="calendar">
+      <div class="calendar_head">
+        <%= link_to 'Календарь мероприятий', @calendar_gone.content.collection_link %>
+        <%= link_to 'RSS-канал календаря мероприятий', @calendar_gone.content.rss_link, :class => 'rss' %>
+      </div>
+      <div class="calendar_tabs">
+        <ul class='tabs'>
+          <li id='current'>Текущие</li>
+          <li id='nearest'>Ближайшие</li>
+          <li id='gone' class='last'>Прошедшие</li>
+        </ul>
+      </div>
+      <div class="calendar_items item_list">
+        <div class="current">
+          <div class="viewport">
+            <ul class="overview">
+              <% if @calendar_current.content.items.any? %>
+                <% @calendar_current.content.items.each do |item| %>
+                  <%= render :partial => 'commons/calendar_item', :locals => { :item => item} %>
+                <% end %>
+              <% else %>
+                <li class="empty">Нет текущих событий</li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+        </div>
+        <div class="nearest">
+          <div class="viewport">
+            <ul class="overview">
+              <% if @calendar_nearest.content.items.any? %>
+                <% @calendar_nearest.content.items.each do |item| %>
+                  <%= render :partial => 'commons/calendar_item', :locals => { :item => item} %>
+                <% end %>
+              <% else %>
+                <li class="empty">Нет ближайших событий</li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+        </div>
+        <div class="gone">
+          <div class="viewport">
+            <ul class="overview">
+              <% if @calendar_gone.content.items.any? %>
+                <% @calendar_gone.content.items.each do |item| %>
+                  <%= render :partial => 'commons/calendar_item', :locals => { :item => item} %>
+                <% end %>
+              <% else %>
+                <li class="empty">Нет прошедших событий</li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

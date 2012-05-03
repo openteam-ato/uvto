@@ -1,0 +1,149 @@
+.content
+  .inner
+    margin: 0 auto
+    padding: 22px 18px
+    width: 940px
+
+  h1
+    border-bottom: 3px solid #336633
+    font-size: 22px
+    line-height: 26px
+    margin: 0 0 10px 0
+    padding: 0 0 10px 0
+
+    .item_title
+      color: #808080
+      display: block
+      font-size: 12px
+      margin: 9px 0 0 0
+
+  h2
+    font-size: 18px
+    margin: 14px 0
+
+  h3
+    font-size: 16px
+    margin: 14px 0
+
+  h4
+    font-size: 14px
+    margin: 14px 0
+
+  h5
+    font-size: 12px
+    margin: 14px 0
+
+  p
+    font-size: 13px
+    line-height: 20px
+    margin: 0 0 18px 0
+
+  .bold, strong
+    font-weight: bold
+
+  blockquote
+    +clearfix
+    border-left: 3px solid #407743
+    margin: 26px 0 18px 0
+    padding: 15px 28px
+
+    p
+      font-size: 17px
+      line-height: 23px
+      margin: 5px 0
+
+  .source
+    color: #666
+    font-size: 11px
+
+    a
+      color: #3B7BB0
+
+  .nobr
+    white-space: nowrap
+
+  .floatr
+    float: right
+    margin: 18px 0 5px 25px
+
+    .source
+      text-align: center
+
+  .floatl
+    float: left
+    margin: 18px 25px 5px 0
+
+    .source
+      text-align: center
+
+  .article
+    +clearfix
+
+    .chart
+      margin: 18px 0 0 0
+
+    .facts
+      +single-box-shadow(#ccc, 0px, -3px, 10px, -1px)
+      +background-image(linear-gradient(#f7f7f7, #ededed))
+      border: 1px solid #ccc
+      counter-reset: li
+      padding: 20px
+
+      li
+        +clearfix
+        color: #4D4D4D
+        font-family: Georgia, serif
+        font-size: 14px
+        line-height: 20px
+        margin: 0 0 10px 0
+        padding: 0 0 0 28px
+        position: relative
+
+        &:before
+          color: #4d4d4d
+          content: counter(li)"."
+          counter-increment: li
+          font-size: 22px
+          float: left
+          left: 0
+          position: absolute
+          width: 28px
+
+    ul
+      font-size: 13px
+      margin: 18px 0 0 0
+
+      li
+        +clearfix
+        line-height: 19px
+        padding: 0 0 12px 28px
+
+        &:before
+          content: "\2013"
+          float: left
+          left: -28px
+          padding: 0 0 0 0
+          position: relative
+          width: 0
+
+  .addthis_toolbox
+    border: 1px dotted #aaa
+    border-left: none
+    border-right: none
+    color: #666
+    margin: 20px 0
+    padding: 15px 0 5px 0
+
+    span
+      font-size: 11px
+      float: right
+      margin: 0  5px 0 0
+
+    a
+      float: right
+
+    .addthis_button_facebook_like
+      float: left
+
+      iframe
+        width: 200px !important

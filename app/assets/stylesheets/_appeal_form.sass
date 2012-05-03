@@ -1,0 +1,182 @@
+=input_style
+  width: 150px
+  color: #777
+  font-size: 12px
+  font-family: Arial, Verdana, sans-serif
+  background-color: #fff
+  border: 1px solid #ccc
+  +border-radius
+  padding: 5px
+  &:focus
+    color: #333
+    +single-box-shadow(#d48902, 0, 0, 5px)
+
+=form_elements
+  .formtastic
+    label
+      color: #444
+      font-size: 14px
+      line-height: 18px
+    ol
+      list-style: none
+      margin: 0
+    .inputs
+      li
+        +clearfix
+        margin-bottom: 5px
+        abbr
+          +inline-block
+          width: 6px
+          height: 6px
+          text-indent: -9999em
+          background: transparent url('required.png') no-repeat
+          margin: 0 0 6px 3px
+      .string,
+      .text,
+      .email,
+      .phone,
+      .select
+        label
+          display: block
+      .string,
+      .email,
+      .phone
+        input
+          +input_style
+      .select
+        select
+          +input_style
+          width: 162px
+      .text
+        textarea
+          +input_style
+          width: 685px
+          height: 100px
+      .boolean
+        input
+          margin-right: 10px
+      .inline-errors
+        color: #880000
+        font-size: 0.9em
+        background: transparent url('inline_error_arrow.png') no-repeat 1px 2px
+        padding: 0 0 0 15px
+    .buttons
+      +clearfix
+      margin: 10px 0
+      li
+        float: left
+        margin-right: 10px
+
+.appeal_form
+  +form_elements
+  +border-radius
+  background: #fefefe
+  border: 1px solid #ccc
+  margin: 0 auto
+  padding: 20px 15px
+  width: 700px
+
+  fieldset.name
+    +clearfix
+
+    li
+      float: left
+
+      .choices-group
+        +clearfix
+
+        .choice
+          float: left
+          margin: 5px 25px 5px 0
+
+        label
+          font-size: 12px
+          line-height: 16px
+
+        li
+          float: none
+
+  #appeal_surname_input,
+  #appeal_name_input,
+  #appeal_patronymic_input
+    margin-right: 10px
+
+  #appeal_social_status
+    width: 181px
+
+  #appeal_answer_kind_input
+    clear: left
+
+  fieldset.address
+    +clearfix
+
+    li
+      float: left
+
+  #appeal_address_attributes_postcode_input,
+  #appeal_address_attributes_region_input
+    margin-right: 10px
+
+  #appeal_address_attributes_township_input
+    clear: left
+
+  #appeal_address_attributes_township_input,
+  #appeal_address_attributes_street_input,
+  #appeal_address_attributes_house_input,
+  #appeal_address_attributes_building_input
+    margin-right: 10px
+
+  #appeal_address_attributes_house,
+  #appeal_address_attributes_building,
+  #appeal_address_attributes_flat
+    width: 50px
+
+  #appeal_topic_id
+    width: 697px
+
+  .upload_link
+    font-size: 14px
+    float: right
+    line-height: 22px
+
+    &:before
+      content: '\2B'
+      display: block
+      float: left
+      height: 22px
+      width: 16px
+
+  #appeal_submit_action, #appeal_cancel_action
+    +inline-block
+    height: 24px
+    margin: 20px 0 0 0
+
+  #appeal_cancel_action
+    float: right
+
+  #appeal_submit_action input, #appeal_cancel_action a
+    +border-radius
+    +background-image(linear-gradient(#fefefe, #e1e1e1))
+    border: 1px solid #ccc
+    color: #444
+    display: block
+    font-family: Verdana, Arial, sans-serif
+    font-size: 14px
+    line-height: 18px
+    margin: 0
+    padding: 3px 6px
+    text-decoration: none
+
+    &:hover
+      +background-image(linear-gradient(#fefefe, #d0d0d0))
+
+    &:active
+      +background-image(linear-gradient(#d0d0d0, #fefefe))
+
+  .appeal_file_wrapper
+    +clearfix
+    width: 700px
+
+    iframe
+      height: 410px !important
+      width: 700px !important

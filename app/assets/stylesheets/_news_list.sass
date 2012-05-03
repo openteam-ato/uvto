@@ -1,0 +1,123 @@
+.news_list
+  +clearfix
+  clear: both
+  padding: 0 0 30px 0
+  margin: 0 0 30px 0
+  border-bottom: 1px dotted #7f7f7f
+
+  h2
+    font-size: 23px
+    margin: 4px 0 22px 0
+
+  ul
+    +clearfix
+
+    .last
+      margin-right: 0
+
+    li
+      +min-height(225px)
+      float: left
+      margin: 0 60px 20px 0
+      width: 265px
+
+      img
+        +border-radius
+        border: 1px solid #ccc
+        float: left
+        margin: 10px 10px 0 0
+
+      h5
+        font-size: 14px
+        line-height: 18px
+        margin: 10px 0 0 0
+
+      .annotation
+        margin: 10px 0 0 0
+
+        p
+          font-size: 12px
+          line-height: 16px
+          margin: 0
+
+.article
+  .date
+    margin: 0 0 10px 0
+
+  .event_properties
+    margin: 11px 0 0 0
+
+    .event_date
+      font-size: 15px
+      font-weight: bold
+
+    .event_location
+      color: #777
+      font-size: 12px
+      margin: 20px 0 13px
+
+  .news_list
+    border: none
+
+    ul
+      li
+        +clearfix
+        +min-height(0)
+        border-bottom: 1px solid #e6e6e6
+        float: left
+        height: auto
+        padding-left: 0
+        width: 100%
+
+        img
+          +border-radius
+          border: 1px solid #ccc
+          float: left
+          margin: 10px 10px 10px 0
+
+        &:before
+          display: none
+
+.date
+  color: #808080
+  display: block
+  font-size: 11px
+  margin: 0 0 5px 0
+
+.event_list
+  margin-bottom: 40px
+
+  h2
+    border-bottom: 1px dotted #aaa
+    margin-bottom: 21px
+    padding-bottom: 20px
+
+  li
+    border-bottom: 1px dotted #aaa
+    margin: 0 0 17px 0
+    padding: 0 0 9px 0 !important
+
+    h5
+      +clearfix
+      font-size: 20px
+      line-height: 30px
+      margin: 0 0 10px 0
+
+    .annotation
+      +clearfix
+      margin: 0 0 0 188px
+
+    &:before
+      display: none
+
+  .event_properties
+    float: left
+    margin: 3px 0 0 0
+    padding: 0 20px 0 13px
+    width: 155px
+
+    .event_date
+      line-height: 26px
+      font-weight: normal
+      .nobr
+        font-weight: bold

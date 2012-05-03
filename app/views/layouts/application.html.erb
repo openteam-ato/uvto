@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= raw @page_title %> | <%= strip_tags(@site_name.content.body) %></title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= yield(:extend_javascripts) %>
+  <%= favicon_link_tag %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="top">
+    <div class="inner">
+      <ul class="languages">
+        <li><a href="/">РУ</a></li>
+        <li><a href="#">EN</a></li>
+        <li><a href="#">DE</a></li>
+      </ul>
+      <div class="impaired">
+        <a href="#">Версия для слабовидящих</a>
+      </div>
+      <a href="#" class='sitemap'>Карта сайта</a>
+    </div>
+  </div>
+
+  <div class="header">
+    <div class="inner">
+      <%= render "regions/additional_#{@main_bottom_navigation.type.underscore}", :object => @main_bottom_navigation.content if @main_bottom_navigation %>
+      <div class="logo">
+        <%= link_to t("administration_of_tomsk_region"), "/", :title => t('administration_of_tomsk_region') %>
+      </div>
+      <div class="site_title">
+        <a href="/" title='<%= t('administration_of_tomsk_region') %>'>
+          <%= t('administration_of_tomsk_region') %>
+          <span class="desc"><%= t('official_information_internet_portal') %></span>
+        </a>
+      </div>
+      <div class="search_block invalid_link">
+        <form action="/ru/search">
+          <ul class='inputs'>
+            <li>
+              <input type="text" name='parts_params[search][q]' />
+            </li>
+          </ul>
+          <ul class='buttons'>
+            <li>
+              <input type="submit" value="искать" />
+            </li>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <%= render "regions/main_#{@main_navigation.type.underscore}", :object => @main_navigation.content if @main_navigation %>
+
+  <%= render "regions/submenu_#{@main_navigation.type.underscore}", :object => @main_navigation.content if @main_navigation %>
+
+  <%= render "regions/main_subnavigation_part", :object => @main_subnavigation.content if @main_subnavigation %>
+
+  <%= render "regions/#{@breadcrumbs.type.underscore}", :object => @breadcrumbs.content if @breadcrumbs %>
+
+  <%= yield(:actual_and_calendar) %>
+
+  <div class="content index">
+    <div class="inner">
+      <% if @content_first %>
+        <% if @content_first.part_title.present? %>
+          <%= content_tag :h1 do %>
+            <%= @content_first.part_title %>
+            <%= yield(:item_title) %>
+          <% end %>
+        <% else %>
+          <%= content_tag :h1, @page_title %>
+        <% end %>
+      <% end %>
+
+      <%= yield(:content) %>
+
+      <%= yield(:map_region) %>
+
+      <%= render_partial_for_region(@gallery) if @gallery %>
+    </div>
+  </div>
+
+  <%= render("regions/#{@banners.type.underscore}", :object => @banners.content) if @banners %>
+
+  <%= render "regions/bottom_#{@secondary_navigation.type.underscore}", :object => @secondary_navigation.content if @secondary_navigation %>
+
+  <div class="footer">
+    <div class="inner">
+      <div class="contacts">
+        <h5><a href='#'>Контакты</a></h5>
+        <p>Администрация Томской области</p>
+        <p>634050, г.Томск, пл. Ленина, 6</p>
+        <p>+7 (382-2) 510-505, +7 (382-2) 510-001</p>
+        <p>+7 (382-2) 510-323, <a href='mailto:ato@tomsk.gov.ru'>ato@tomsk.gov.ru</a></p>
+      </div>
+      <div class="social_links">
+        <ul>
+          <li><a href="#" class='rss invalid_link' alt='RSS обновлений' title='RSS обновлений'>RSS</a></li>
+          <li><a href="#" class='vkontakte invalid_link' alt='Наша группа ВКонтакте' title='Наша группа ВКонтакте'>ВКонтакте</a></li>
+          <li><a href="#" class='facebook invalid_link' alt='Наша страница Facebook' title='Наша страница Facebook'>Facebook</a></li>
+          <li><a href="https://twitter.com/#!/TomskRegion" class='twitter' alt='Наш Twitter' title='Наш Twitter'>Twitter</a></li>
+          <li><a href="#" class='livejournal invalid_link' alt='Блог в LiveJournal' title='Блог в LiveJournal'>LiveJournal</a></li>
+        </ul>
+      </div>
+      <div class="copyrights">
+        <ul>
+          <li>Разработка: <a href="http://openteam.ru">OpenTeam</a></li>
+          <li>Дизайн: <a href="http://kutanaga.ru">Kutanaga.ru</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <%= render :partial => 'commons/reformal' %>
+</body>
+</html>

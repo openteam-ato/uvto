@@ -1,0 +1,26 @@
+<% content_for :content do %>
+  <h1>
+    Календарь мероприятий
+    <%= link_to "RSS", @current_events.content.rss_link, :class => 'rss' %>
+  </h1>
+
+  <div class="right_side">
+    <div class="events_archive archive">
+      <%= archive_links(@current_events, @nearest_events, @gone_events, @current_events.content.collection_link) %>
+    </div>
+  </div>
+
+  <div class="article">
+    <% if @current_events && @current_events.content.items.any? %>
+      <%= render :partial => 'regions/event_list_part', :locals => { :object => @current_events.content } %>
+    <% end %>
+    <% if @nearest_events && @nearest_events.content.items.any? %>
+      <%= render :partial => 'regions/event_list_part', :locals => { :object => @nearest_events.content } %>
+    <% end %>
+    <% if @gone_events && @gone_events.content.items.any?%>
+      <%= render :partial => 'regions/event_list_part', :locals => { :object => @gone_events.content } %>
+    <% end %>
+  </div>
+<% end %>
+
+<%= render :template => 'layouts/application' %>

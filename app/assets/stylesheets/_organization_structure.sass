@@ -1,0 +1,130 @@
+#organization_structure
+  ul, li, div
+    font-size: 11px
+    line-height: 14px
+    position: relative
+
+    &:after
+      content: "."
+      display: block
+      height: 0
+      clear: both
+      visibility: hidden
+
+  li
+
+  .first
+    margin: 0 0 40px 0
+    .first_item
+      &:before
+
+  .second
+    border-left: 1px solid #808080
+    margin: 0 0 0 218px
+    padding: 20px 0 0 0
+    top: 20px
+
+    .no_margin
+      margin: 0 0 15px 0 !important
+      top: 37px
+
+      .subdivision
+        &:before
+          margin-bottom: 15px
+
+    .second_item
+      margin: 0 0 40px 0
+
+      &:before
+        border-top: 1px solid #808080
+        content: ''
+        float: left
+        padding: 0
+        position: relative
+        top: 8px
+        width: 40px
+
+  .third
+    +inline-block
+    border-left: 1px solid #808080
+    margin: 0 0 0 38px
+    padding: 0 0 0 40px
+    top: 20px
+    width: 400px
+
+    .third_item
+      +inline-block
+      margin: 0 0 0 0
+      top: 38px
+
+      &:before
+        border-top: 1px solid #808080
+        content: ''
+        float: left
+        left: -40px
+        padding: 0
+        position: relative
+        top: 8px
+        width: 40px
+
+      &:after
+        clear: none
+
+  .node
+    float: left
+
+  .superior
+    +single-box-shadow(#ccc, 0px, -3px, 10px, -1px)
+    background: #ededed
+    border: 1px solid #ccc
+    width: 178px
+
+    .title
+      display: table-cell
+      float: left
+      padding: 5px
+      text-align: center
+      vertical-align: middle
+      width: 168px
+
+    img
+      +min-height(158px)
+      display: block
+
+    .fio
+      display: table-cell
+      height: 50px
+      padding: 0 5px
+      text-align: center
+      vertical-align: middle
+      width: 168px
+
+    &:before
+      border-top: 1px solid #808080
+      border-right: 1px solid #808080
+      content: ''
+      float: right
+      left: 40px
+      position: relative
+      margin-bottom: -40px
+      top: 19px
+      height: 40px
+      width: 38px
+
+  .subdivision
+    width: 400px
+
+    &:before
+      border-left: 1px solid #808080
+      content: ''
+      float: left
+      height: 16px
+      left: -1px
+      margin: 0 12px 30px 0
+
+  .no_need_links
+    border: none
+
+  .no_need_links_before
+    &:before
+      border: none

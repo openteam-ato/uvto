@@ -1,0 +1,217 @@
+.actual_and_calendar
+  +clearfix
+  background: #558754
+  +background-image(linear-gradient(#3d7541, #558754, #3e7541))
+  border-top: 1px solid #005504
+  border-bottom: 1px solid #005504
+  height: 378px
+
+  .inner
+    padding: 16px 10px
+    width: 940px
+
+  .actual
+    +clearfix
+    +single-box-shadow(#345e36, 0, 0, 3px, 1px)
+    border: 1px solid #135417
+    float: left
+    height: 348px
+    margin: 0 9px 0 0
+    width: 618px
+
+  #slider
+    +clearfix
+    .galleria-container
+      .galleria-stage
+        height: 348px
+        width: 618px
+
+        .galleria-images
+          .galleria-image
+            img
+              height: 348px !important
+              width: 618px !important
+
+        .galleria-loader
+          display: none
+        .galleria-counter
+          display: none
+        .galleria-image-nav
+          display: none
+
+      .galleria-thumbnails-container
+        display: none
+
+      .galleria-info
+        background: image_url('slider_title_bg.png') repeat-x
+        color: #fff
+        font-size: 18px
+        height: 72px
+        line-height: 24px
+        padding: 11px 14px
+        position: relative
+        top: -94px
+        z-index: 1
+
+        a
+          color: #f7f7f7
+
+        .galleria-info-text
+          +clearfix
+          height: 54px
+
+        .dots
+          +clearfix
+          margin: 4px 0 0 0
+
+          span
+            background: image_url('dots.png') no-repeat right
+            display: block
+            float: left
+            height: 20px
+            margin: 0 3px 0 0
+            width: 20px
+
+            &.active
+              background-position: left
+
+            &:hover
+              cursor: pointer
+
+      .galleria-tooltip
+        display: none
+
+      .galleria-fullscreen
+        display: none
+
+  .calendar
+    +clearfix
+    background-color: #fff
+    +background-image(linear-gradient(#f4f4f4, #fff, #fff))
+    border: 1px solid #135417
+    float: left
+    height: 348px
+    //position: relative
+    width: 308px
+
+    .calendar_head
+      +single-box-shadow(#bdbdbd, 0, 0, 3px)
+      background: #d79712
+      +background-image(linear-gradient(#e1a72d, #d79712, #d79712))
+      height: 20px
+      padding: 12px 18px
+
+      a
+        color: #f9ebd0
+        font-size: 18px
+
+        &:hover
+          color: #fbf1df
+
+      .rss
+
+    .calendar_tabs
+      +clearfix
+      border: none
+      border-bottom: 1px solid #bfbfbf
+      font-size: 13px
+      height: 16px
+      padding: 17px 0
+      margin: 0 18px
+
+      ul
+        +clearfix
+        border: none
+
+        li
+          border-bottom: 1px dashed #005FAB
+          color: #005FAB
+          display: block
+          float: left
+          line-height: 16px
+          margin: 0 24px 0 0
+          padding: 0 !important
+          text-decoration: none
+
+        .active
+          background: none
+          border: none
+          color: #000
+
+        .last
+          margin: 0
+
+    .calendar_items
+      +clearfix
+      height: 206px
+      padding: 24px 15px
+
+      .disable
+        display: none
+
+      .viewport
+        +clearfix
+        height: 209px
+        position: relative
+        width: 279px
+
+      .empty
+        color: #999
+        font-size: 14px
+        padding: 100px 0 0 0
+        text-align: center
+        height: 109px
+        //279 209
+
+      ul
+        +clearfix
+        height: 209px
+        position: relative
+
+        li
+          float: left
+          height: 209px
+          width: 279px
+
+          .calendar_item_date
+            font-size: 18px
+            margin: 0 0 15px 0
+            padding: 0 10px 0 0
+            .nobr
+              white-space: nowrap
+
+          .calendar_item_placement
+            color: #808080
+            font-size: 14px
+            line-height: 18px
+            margin: 0 0 18px 0
+            padding: 0 10px 0 0
+
+          .calendar_item_title
+            line-height: 22px
+            padding: 0 10px 0 0
+
+    .scrollbar
+      +border-radius(3px)
+      background: #655537
+      bottom: 13px
+      float: left
+      height: 7px
+      left: 18px
+      padding: 0
+      width: 272px
+
+      .thumb
+        +border-radius(3px)
+        background: #d79712
+        border: 1px solid #9f6b00
+        top: -1px
+        bottom: 0
+        display: block
+        height: 7px
+        margin: 0
+        outline: none
+        position: relative
+
+        &:hover
+          cursor: pointer

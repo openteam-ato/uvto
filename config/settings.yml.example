@@ -1,0 +1,13 @@
+app:
+  secret:     SECRET
+
+cms:
+  url:        http://cms.esp.tomsk.gov.ru
+  site_slug:  site-slug
+
+errors:
+  key:        SECRET
+  url:        http://errors.openteam.ru
+
+storage:
+  url:        http://storage.esp.tomsk.gov.ru
