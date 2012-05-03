@@ -20,3 +20,7 @@ group :default do
   gem 'sass-rails'
   gem 'uuid'
 end
+
+group :production do
+  gem 'unicorn', :require => false
+end
