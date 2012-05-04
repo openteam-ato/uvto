@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
+  <meta charset="UTF-8">
   <title><%= raw @page_title %> | <%= strip_tags(@site_name.content.body) %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
@@ -11,13 +12,8 @@
 <body>
   <div class="top">
     <div class="inner">
-      <ul class="languages">
-        <li><a href="/">РУ</a></li>
-        <li><a href="#">EN</a></li>
-        <li><a href="#">DE</a></li>
-      </ul>
-      <div class="impaired">
-        <a href="#">Версия для слабовидящих</a>
+      <div class="voice_portal">
+        голосовой портал (3822) 900-250
       </div>
       <a href="#" class='sitemap'>Карта сайта</a>
     </div>
@@ -27,12 +23,12 @@
     <div class="inner">
       <%= render "regions/additional_#{@main_bottom_navigation.type.underscore}", :object => @main_bottom_navigation.content if @main_bottom_navigation %>
       <div class="logo">
-        <%= link_to t("administration_of_tomsk_region"), "/", :title => t('administration_of_tomsk_region') %>
+        <%= link_to 'Управление ветеринарии Томской области', '/', :title => 'Управление ветеринарии Томской области' %>
       </div>
       <div class="site_title">
-        <a href="/" title='<%= t('administration_of_tomsk_region') %>'>
-          <%= t('administration_of_tomsk_region') %>
-          <span class="desc"><%= t('official_information_internet_portal') %></span>
+        <a href="/" title='Управление ветеринарии Томской области'>
+          Управление ветеринарии Томской области
+          <span class="desc">Официальный информационный интернет-портал</span>
         </a>
       </div>
       <div class="search_block invalid_link">
@@ -91,17 +87,17 @@
     <div class="inner">
       <div class="contacts">
         <h5><a href='#'>Контакты</a></h5>
-        <p>Администрация Томской области</p>
-        <p>634050, г.Томск, пл. Ленина, 6</p>
-        <p>+7 (382-2) 510-505, +7 (382-2) 510-001</p>
-        <p>+7 (382-2) 510-323, <a href='mailto:ato@tomsk.gov.ru'>ato@tomsk.gov.ru</a></p>
+        <p>Управление ветеринарии Томской области</p>
+        <p>634050, г.Томск, пр. Ленина, 88</p>
+        <p>Тел.: (3822) 900-271, Факс: (3822) 900-270</p>
+        <p><a href='mailto:ouv@gosvet.tomsk.ru'>ouv@gosvet.tomsk.ru</a></p>
       </div>
       <div class="social_links">
         <ul>
           <li><a href="#" class='rss invalid_link' alt='RSS обновлений' title='RSS обновлений'>RSS</a></li>
           <li><a href="#" class='vkontakte invalid_link' alt='Наша группа ВКонтакте' title='Наша группа ВКонтакте'>ВКонтакте</a></li>
           <li><a href="#" class='facebook invalid_link' alt='Наша страница Facebook' title='Наша страница Facebook'>Facebook</a></li>
-          <li><a href="https://twitter.com/#!/TomskRegion" class='twitter' alt='Наш Twitter' title='Наш Twitter'>Twitter</a></li>
+          <li><a href="https://twitter.com/#!/TomskRegion" class='twitter invalid_link' alt='Наш Twitter' title='Наш Twitter'>Twitter</a></li>
           <li><a href="#" class='livejournal invalid_link' alt='Блог в LiveJournal' title='Блог в LiveJournal'>LiveJournal</a></li>
         </ul>
       </div>
