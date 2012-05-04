@@ -3,10 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title><%= raw @page_title %> | <%= strip_tags(@site_name.content.body) %></title>
+  <%= favicon_link_tag %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= yield(:extend_javascripts) %>
-  <%= favicon_link_tag %>
+  <!--[if lte IE 7]>
+  <%= stylesheet_link_tag    'stop_ie/application' %>
+  <%= javascript_include_tag 'stop_ie/application' %>
+  <![endif]-->
   <%= csrf_meta_tags %>
 </head>
 <body>

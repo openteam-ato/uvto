@@ -145,6 +145,10 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    stop_ie (0.1.0.2)
+      jquery-rails
+      rails
+      sass-rails
     systemu (2.5.0)
     therubyracer (0.10.1)
       libv8 (~> 3.3.10)
@@ -180,6 +184,7 @@ DEPENDENCIES
   rails
   russian
   sass-rails
+  stop_ie
   therubyracer
   uglifier
   unicorn

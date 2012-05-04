@@ -18,6 +18,7 @@ group :default do
   gem 'rails'
   gem 'russian'
   gem 'sass-rails'
+  gem 'stop_ie'
   gem 'uuid'
 end
 
