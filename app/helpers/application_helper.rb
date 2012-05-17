@@ -68,16 +68,33 @@ module ApplicationHelper
 
   end
 
-  def archive_links(current_events, nearest_events, gone_events, base_path)
-    @events = [current_events, nearest_events, gone_events].map(&:border_dates)
+  def entries_rss_link(parts_array)
+    part = parts_array.compact.select { |part| part.content.rss_link }.first
+    part.content.rss_link
+  end
+
+  def archive_links(parts_array)
+    parts_array = parts_array.compact.select { |part| part.content.items && part.content.items.any? }
+
+    return "" if parts_array.empty?
+    @events = parts_array.map(&:archive_dates)
+
+    base_path = parts_array.first.content.collection_link
+
+    list_type = parts_array.first.type.underscore.gsub!('_part', '')
 
     result = '<ul>'
 
+    current_year = params[:parts_params].try(:[], list_type).try(:[], "interval_year")
+    current_month = params[:parts_params].try(:[], list_type).try(:[], "interval_month")
+
+    return "" if archive_monthes.size < 2
+
     monthes_by_year.each do |year, dates|
       result += '<li>'
-      result += link_to(year, '#', :class => 'year')
+      result += link_to(year, '#', :class => "year#{current_year == year.to_s ? ' active' : nil}")
       result += '<ul>'
-      result += dates.reverse.map{ |date| content_tag(:li, link_to(t('date.month_names')[date.month], "#{base_path}/monthly/?parts_params[news_list][interval_year]=#{year}&parts_params[news_list][interval_month]=#{date.month}")) }.join('')
+      result += dates.map{ |date| content_tag(:li, link_to(t('date.month_names')[date.month], "#{base_path}/?parts_params[#{list_type}][interval_year]=#{year}&parts_params[#{list_type}][interval_month]=#{date.month}", :class => current_month == date.month.to_s && current_year == year.to_s ? 'active' : nil)) }.join('')
       result += '</ul></li>'
     end
 
@@ -86,8 +103,12 @@ module ApplicationHelper
     result.html_safe
   end
 
+  def archive_monthes
+    (early_date..lately_date).select{|m| m.day == 1 }
+  end
+
   def monthes_by_year
-    (early_date..lately_date).select{|m| m.day == 1 }.group_by(&:year)
+    archive_monthes.reverse.group_by(&:year)
   end
 
   def early_date
