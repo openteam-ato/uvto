@@ -1,4 +1,12 @@
 #organization_structure
+
+  li
+    overflow: visible
+    padding: 0
+    &:before
+      content: ""
+      left: 0
+
   ul, li, div
     font-size: 11px
     line-height: 14px
@@ -15,7 +23,6 @@
     margin: 0 0 40px 0
 
   .second
-    border-left: 1px solid #808080
     margin: 0 0 0 218px
     padding: 20px 0 0 0
     top: 20px
@@ -29,7 +36,8 @@
           margin-bottom: 15px
 
     .second_item
-      margin: 0 0 40px 0
+      border-left: 1px solid #808080
+      padding: 0 0 40px 0
 
       &:before
         border-top: 1px solid #808080
@@ -39,6 +47,10 @@
         position: relative
         top: 8px
         width: 40px
+
+      &.last
+        border-left-color: transparent
+        margin-top: -9px
 
   .third
     +inline-block
