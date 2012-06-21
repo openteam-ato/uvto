@@ -68,6 +68,15 @@ module ApplicationHelper
 
   end
 
+    def entry_date
+      @entry_date ||= begin
+                        @page.regions.to_hash.each do |region_name, region|
+                          return region.try(:[], 'content').try(:[], 'since') if region.try(:[], 'template') == 'news_item_part'
+                        end
+                        nil
+                      end
+    end
+
   def entries_rss_link(parts_array)
     part = parts_array.compact.select { |part| part.content.rss_link }.first
     part.content.rss_link
