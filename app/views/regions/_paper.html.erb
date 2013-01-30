@@ -1,4 +1,4 @@
-<%= link_to paper.link ? paper.link : paper.file_url, :class => extension(paper.file_url) do %>
+<%= link_to paper.link ? paper.link : paper.attachment_url, :class => extension(paper.attachment_url) do %>
   <%= content_tag(:span, '&nbsp;'.html_safe, :class => 'icon') %>
   <%= paper.title %>
 <% end %>
