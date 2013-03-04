@@ -15,7 +15,7 @@ group :default do
   gem 'jquery-rails'
   gem 'kaminari'
   gem 'openteam-commons'
-  gem 'rails'
+  gem 'rails',                  '~>3.2.12'
   gem 'russian'
   gem 'sass-rails'
   gem 'stop_ie'
@@ -24,4 +24,8 @@ end
 
 group :production do
   gem 'unicorn', :require => false
+end
+
+group :development do
+  gem 'brakeman'
 end
