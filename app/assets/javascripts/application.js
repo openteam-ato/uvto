@@ -17,5 +17,6 @@
  * = require upload_files
  * = require archive_collapser
  * = require scroll_to
+ * = require iframe_resizer
  * = require main
  */
