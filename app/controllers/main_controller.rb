@@ -2,7 +2,7 @@ class MainController < ApplicationController
   helper_method :cms_address
 
   def index
-    render :file => "#{Rails.root}/public/404.html", :layout => false and return if request_status == 404
+    render :file => "#{Rails.root}/public/404", :formats => [:html], :layout => false and return if request_status == 404
 
     page_regions.each do |region|
       eval "@#{region} = page.regions.#{region}"
